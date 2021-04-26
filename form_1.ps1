@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(900,480)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1000,480)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
@@ -69,7 +69,7 @@ $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft San
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 250
-$Panel1.width                    = 600
+$Panel1.width                    = 800
 $Panel1.location                 = New-Object System.Drawing.Point(229,195)
 
 $Teamviewer                      = New-Object system.Windows.Forms.Button
@@ -127,7 +127,7 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
 $outputBox.Location = New-Object System.Drawing.Size(12,70) 
-$outputBox.Size = New-Object System.Drawing.Size(565,350) 
+$outputBox.Size = New-Object System.Drawing.Size(500,350) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
 
