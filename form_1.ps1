@@ -43,12 +43,14 @@ $PictureBox1.height              = 96
 $PictureBox1.location            = New-Object System.Drawing.Point(-13,-9)
 $PictureBox1.imageLocation       = "https://goodline.com.ar/wp-content/uploads/2021/02/image002.png"
 $PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+
 $Label1                          = New-Object system.Windows.Forms.Label
 $Label1.text                     = "Instalador de Utilidades"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(18,70)
+$Label1.location                 = New-Object System.Drawing.Point(19,101)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Chocolatey                      = New-Object system.Windows.Forms.Button
