@@ -50,7 +50,7 @@ $Label1.text                     = "Instalador de Utilidades"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(19,101)
+$Label1.location                 = New-Object System.Drawing.Point(18,70)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Chocolatey                      = New-Object system.Windows.Forms.Button
@@ -137,7 +137,7 @@ $puertos_print.Font              = New-Object System.Drawing.Font('Microsoft San
 
 $Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
-$Panel1.controls.AddRange(@($p_cocina))
+$Panel1.controls.AddRange(@($p_cocina,$puertos_print))
 
 $Chocolatey.Add_Click({ Write-Host "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
 $GoogleChrome.Add_Click({
