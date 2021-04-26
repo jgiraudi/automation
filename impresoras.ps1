@@ -1,5 +1,6 @@
 Write-Host "Instalando Impresoras"
 Set-ExecutionPolicy Bypass -Scope Process -Force
+Add-PrinterDriver -Name "Generic / Text Only"
 Write-Host "Impresora Cocina"
 Add-PrinterPort -Name "cocina" -PrinterHostAddress "192.168.10.117"
 Add-Printer -Name "cocina" -DriverName "Generic / Text Only" -PortName "cocina"
