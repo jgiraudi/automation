@@ -126,7 +126,7 @@ $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
-$outputBox.Location = New-Object System.Drawing.Size(12,200) 
+$outputBox.Location = New-Object System.Drawing.Size(12,100) 
 $outputBox.Size = New-Object System.Drawing.Size(565,350) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
@@ -148,9 +148,9 @@ $Teamviewer.Add_Click({
 	$wshell.Popup("Operation Completed",0,"Done",0x0)
 })
 $classicshell.Add_Click({
-    Write-Host "Installing Classic Shell (Classic Windows Shell)"
+    Add-OutputBoxLine -Message "Installing Classic Shell (Classic Windows Shell)"
     choco install classic-shell -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
+    Add-OutputBoxLine -Message "Done."
 })
 $p_cocina.Add_Click({
 Write-Host "Instalando Impresoras"
@@ -198,6 +198,12 @@ if ($printDriverExists) {
 $wshell.Popup("Operacion Completada",0,"Done",0x0)
 })
 
+Function Add-OutputBoxLine {
+    Param ($Message)
+    $OutputBox.AppendText("`r`n$Message")
+    $OutputBox.Refresh()
+    $OutputBox.ScrollToCaret()
+}
 
 
 #Write your logic code here
