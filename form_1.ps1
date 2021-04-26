@@ -120,7 +120,7 @@ $Label3.Font                     = New-Object System.Drawing.Font('Microsoft San
 
 $GoogleChrome                    = New-Object system.Windows.Forms.Button
 $GoogleChrome.text               = "Google Chrome"
-$GoogleChrome.width              = 120
+$GoogleChrome.width              = 125
 $GoogleChrome.height             = 30
 $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
