@@ -48,7 +48,7 @@ $Label1.text                     = "Instalador de Utilidades"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(18,62)
+$Label1.location                 = New-Object System.Drawing.Point(18,70)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Chocolatey                      = New-Object system.Windows.Forms.Button
@@ -118,7 +118,7 @@ $Label3.Font                     = New-Object System.Drawing.Font('Microsoft San
 
 $GoogleChrome                    = New-Object system.Windows.Forms.Button
 $GoogleChrome.text               = "Google Chrome"
-$GoogleChrome.width              = 95
+$GoogleChrome.width              = 120
 $GoogleChrome.height             = 30
 $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
