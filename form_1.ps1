@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(629,390)
+$Form.ClientSize                 = New-Object System.Drawing.Point(700,480)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
