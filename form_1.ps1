@@ -33,7 +33,7 @@ $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
-$Panel2.height                   = 169
+$Panel2.height                   = 120
 $Panel2.width                    = 415
 $Panel2.location                 = New-Object System.Drawing.Point(229,17)
 
