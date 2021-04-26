@@ -128,8 +128,8 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 $puertos_print                   = New-Object system.Windows.Forms.TextBox
 $puertos_print.multiline         = $true
 $puertos_print.text              = "$(Get-Printer)"
-$puertos_print.width             = 400
-$puertos_print.height            = 180
+$puertos_print.width             = 401
+$puertos_print.height            = 200
 $puertos_print.location          = New-Object System.Drawing.Point(12,60)
 $puertos_print.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
