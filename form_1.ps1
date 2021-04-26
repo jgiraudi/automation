@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(700,480)
+$Form.ClientSize                 = New-Object System.Drawing.Point(800,480)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
@@ -69,7 +69,7 @@ $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft San
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 250
-$Panel1.width                    = 430
+$Panel1.width                    = 600
 $Panel1.location                 = New-Object System.Drawing.Point(229,195)
 
 $Teamviewer                      = New-Object system.Windows.Forms.Button
@@ -125,19 +125,16 @@ $GoogleChrome.height             = 30
 $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
-$puertos_print                   = New-Object system.Windows.Forms.TextBox
-$puertos_print.multiline         = $true
-$puertos_print.text              = "$(Get-Printer)"
-$puertos_print.width             = 401
-$puertos_print.height            = 200
-$puertos_print.location          = New-Object System.Drawing.Point(12,60)
-$puertos_print.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$outputBox = New-Object System.Windows.Forms.TextBox 
+$outputBox.Location = New-Object System.Drawing.Size(12,200) 
+$outputBox.Size = New-Object System.Drawing.Size(565,350) 
+$outputBox.MultiLine = $True 
+$outputBox.ScrollBars = "Vertical"
 
-
-
+$Form.Controls.Add($outputBox)
 $Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
-$Panel1.controls.AddRange(@($p_cocina,$puertos_print))
+$Panel1.controls.AddRange(@($p_cocina,$outputBox))
 
 $Chocolatey.Add_Click({ Write-Host "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
 $GoogleChrome.Add_Click({
