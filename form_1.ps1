@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(800,480)
+$Form.ClientSize                 = New-Object System.Drawing.Point(900,480)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
@@ -126,7 +126,7 @@ $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
-$outputBox.Location = New-Object System.Drawing.Size(12,100) 
+$outputBox.Location = New-Object System.Drawing.Size(12,70) 
 $outputBox.Size = New-Object System.Drawing.Size(565,350) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
@@ -136,16 +136,16 @@ $Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
 $Panel1.controls.AddRange(@($p_cocina,$outputBox))
 
-$Chocolatey.Add_Click({ Write-Host "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
+$Chocolatey.Add_Click({ Add-OutputBoxLine -Message "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
 $GoogleChrome.Add_Click({
-    Write-Host "Installing Google Chrome"
+    Add-OutputBoxLine -Message "Installing Google Chrome"
     choco install googlechrome -y
-	$wshell.Popup("Operacion Completada",0,"Done",0x0)
+   Add-OutputBoxLine -Message "Done."
 })
 $Teamviewer.Add_Click({ 
-    Write-Host "Installing Teamviewer"
+    Add-OutputBoxLine -Message "Installing Teamviewer"
     choco install teamviewer -y
-	$wshell.Popup("Operation Completed",0,"Done",0x0)
+    Add-OutputBoxLine -Message "Done."
 })
 $classicshell.Add_Click({
     Add-OutputBoxLine -Message "Installing Classic Shell (Classic Windows Shell)"
@@ -153,10 +153,10 @@ $classicshell.Add_Click({
     Add-OutputBoxLine -Message "Done."
 })
 $p_cocina.Add_Click({
-Write-Host "Instalando Impresoras"
+Add-OutputBoxLine -Message "Instalando Impresoras"
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Add-PrinterDriver -Name "Generic / Text Only"
-Write-Host "Impresora Cocina - 117"
+Add-OutputBoxLine -Message "Impresora Cocina - 117"
 $portName = "p_cocina"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
@@ -169,7 +169,7 @@ if ($printDriverExists) {
 }else{
     Write-Warning "Driver de la impresora no instalado"
 }
-Write-Host "Impresora Barra - 116"
+Add-OutputBoxLine -Message "Impresora Barra - 116"
 $portName = "p_barra"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
@@ -182,7 +182,7 @@ if ($printDriverExists) {
 }else{
     Write-Warning "Driver de la impresora no instalado"
 }
-Write-Host "Impresora Control - 115"
+Add-OutputBoxLine -Message "Impresora Control - 115"
 $portName = "p_control"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
