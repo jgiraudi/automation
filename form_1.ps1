@@ -127,9 +127,9 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $puertos_print                   = New-Object system.Windows.Forms.TextBox
 $puertos_print.multiline         = $true
-$puertos_print.text              = "$(Get-Printerport | format-list name,hostaddress)"
-$puertos_print.width             = 156
-$puertos_print.height            = 78
+$puertos_print.text              = "$(Get-Printerport | Select-Object name)"
+$puertos_print.width             = 250
+$puertos_print.height            = 180
 $puertos_print.location          = New-Object System.Drawing.Point(12,60)
 $puertos_print.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
