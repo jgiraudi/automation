@@ -34,7 +34,7 @@ $Form.TopMost                    = $false
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 169
-$Panel2.width                    = 391
+$Panel2.width                    = 415
 $Panel2.location                 = New-Object System.Drawing.Point(229,17)
 
 $PictureBox1                     = New-Object system.Windows.Forms.PictureBox
@@ -127,7 +127,7 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $puertos_print                   = New-Object system.Windows.Forms.TextBox
 $puertos_print.multiline         = $true
-$puertos_print.text              = "$(Get-Printerport)"
+$puertos_print.text              = "$(Get-Printerport | format-list name,hostaddress)"
 $puertos_print.width             = 156
 $puertos_print.height            = 78
 $puertos_print.location          = New-Object System.Drawing.Point(12,60)
