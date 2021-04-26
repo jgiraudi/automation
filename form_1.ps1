@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1000,480)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1000,500)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
@@ -69,8 +69,8 @@ $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft San
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 600
-$Panel1.width                    = 450
-$Panel1.location                 = New-Object System.Drawing.Point(229,110)
+$Panel1.width                    = 600
+$Panel1.location                 = New-Object System.Drawing.Point(229,120)
 
 $Teamviewer                      = New-Object system.Windows.Forms.Button
 $Teamviewer.text                 = "Teamviewer"
