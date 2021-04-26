@@ -28,7 +28,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(629,355)
+$Form.ClientSize                 = New-Object System.Drawing.Point(629,390)
 $Form.text                       = "Form"
 $Form.TopMost                    = $false
 
@@ -122,6 +122,16 @@ $GoogleChrome.width              = 120
 $GoogleChrome.height             = 30
 $GoogleChrome.location           = New-Object System.Drawing.Point(281,70)
 $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$puertos_print                   = New-Object system.Windows.Forms.TextBox
+$puertos_print.multiline         = $true
+$puertos_print.text              = "$(Get-Printerport)"
+$puertos_print.width             = 156
+$puertos_print.height            = 78
+$puertos_print.location          = New-Object System.Drawing.Point(12,60)
+$puertos_print.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+
 
 $Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
