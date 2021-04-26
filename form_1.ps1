@@ -70,7 +70,7 @@ $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft San
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 250
 $Panel1.width                    = 800
-$Panel1.location                 = New-Object System.Drawing.Point(229,195)
+$Panel1.location                 = New-Object System.Drawing.Point(229,110)
 
 $Teamviewer                      = New-Object system.Windows.Forms.Button
 $Teamviewer.text                 = "Teamviewer"
