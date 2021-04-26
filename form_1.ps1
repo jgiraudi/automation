@@ -68,7 +68,7 @@ $p_cocina.location               = New-Object System.Drawing.Point(12,20)
 $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
-$Panel1.height                   = 150
+$Panel1.height                   = 250
 $Panel1.width                    = 391
 $Panel1.location                 = New-Object System.Drawing.Point(229,195)
 
@@ -127,7 +127,7 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $puertos_print                   = New-Object system.Windows.Forms.TextBox
 $puertos_print.multiline         = $true
-$puertos_print.text              = "$(Get-Printerport | Select-Object name)"
+$puertos_print.text              = "$(Get-Printer | select-object name,portname)"
 $puertos_print.width             = 250
 $puertos_print.height            = 180
 $puertos_print.location          = New-Object System.Drawing.Point(12,60)
