@@ -44,15 +44,6 @@ $PictureBox1.location            = New-Object System.Drawing.Point(-13,-9)
 $PictureBox1.imageLocation       = "https://goodline.com.ar/wp-content/uploads/2021/02/image002.png"
 $PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 
-
-$Label1                          = New-Object system.Windows.Forms.Label
-$Label1.text                     = "Instalador de Utilidades"
-$Label1.AutoSize                 = $true
-$Label1.width                    = 25
-$Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(19,80)
-$Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
-
 $Chocolatey                      = New-Object system.Windows.Forms.Button
 $Chocolatey.text                 = "Instalar Chocolatey"
 $Chocolatey.width                = 125
@@ -140,11 +131,16 @@ $outputBox.MultiLine = $True
 $outputBox.ScrollBars = "Vertical"
 
 $Form.Controls.Add($outputBox)
-$Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
+$Form.controls.AddRange(@($Panel2,$PictureBox1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
 $Panel1.controls.AddRange(@($p_cocina,$Ins_printers,$outputBox))
 
-$Chocolatey.Add_Click({ Add-OutputBoxLine -Message "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
+$Chocolatey.Add_Click({ 
+    Write-Host "Installing Chocolatey"
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	choco install chocolatey-core.extension -y
+	$wshell.Popup("Operation Completed",0,"Done",0x0)
+})
 $GoogleChrome.Add_Click({
     Add-OutputBoxLine -Message "Installing Google Chrome"
     choco install googlechrome -y
