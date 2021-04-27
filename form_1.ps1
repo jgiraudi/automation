@@ -104,7 +104,7 @@ $Label2.text                     = "Nombre del equipo"
 $Label2.AutoSize                 = $true
 $Label2.width                    = 25
 $Label2.height                   = 10
-$Label2.location                 = New-Object System.Drawing.Point(19,101)
+$Label2.location                 = New-Object System.Drawing.Point(18,101)
 $Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $TextBox2                        = New-Object system.Windows.Forms.TextBox
