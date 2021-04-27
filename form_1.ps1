@@ -62,7 +62,7 @@ $Ins_printers                    = New-Object system.Windows.Forms.Button
 $Ins_printers.text               = "Impresoras instaladas"
 $Ins_printers.width              = 126
 $Ins_printers.height             = 40
-$Ins_printers.location           = New-Object System.Drawing.Point(170,20)
+$Ins_printers.location           = New-Object System.Drawing.Point(140,20)
 $Ins_printers.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Ins_ports                       = New-Object system.Windows.Forms.Button
@@ -132,7 +132,7 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
 $outputBox.Location = New-Object System.Drawing.Size(12,70) 
-$outputBox.Size = New-Object System.Drawing.Size(600,200) 
+$outputBox.Size = New-Object System.Drawing.Size(650,200) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
 
