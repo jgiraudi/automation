@@ -206,7 +206,7 @@ if ($printDriverExists) {
 $wshell.Popup("Operacion Completada",0,"Done",0x0)
 })
 $Ins_printers.Add_Click({   
-      $OutputBox.Text = Get-Printer
+      $OutputBox.Text = Get-Printer | Format-table
 })
 
 Function Add-OutputBoxLine {
