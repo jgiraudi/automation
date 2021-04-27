@@ -69,12 +69,12 @@ $Ins_ports                       = New-Object system.Windows.Forms.Button
 $Ins_ports.text                  = "Puertos instalados"
 $Ins_ports.width                 = 126
 $Ins_ports.height                = 40
-$Ins_ports.location              = New-Object System.Drawing.Point(230,20)
+$Ins_ports.location              = New-Object System.Drawing.Point(300,20)
 $Ins_ports.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 600
-$Panel1.width                    = 600
+$Panel1.width                    = 700
 $Panel1.location                 = New-Object System.Drawing.Point(229,120)
 
 $Teamviewer                      = New-Object system.Windows.Forms.Button
