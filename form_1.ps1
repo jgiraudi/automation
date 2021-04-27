@@ -65,6 +65,12 @@ $Ins_printers.height             = 40
 $Ins_printers.location           = New-Object System.Drawing.Point(170,20)
 $Ins_printers.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
+$Ins_ports                       = New-Object system.Windows.Forms.Button
+$Ins_ports.text.                 = "Puertos instalados"
+$Ins_ports.width.                = 126
+$Ins_ports.height.               = 40
+$Ins_ports.location.             = New-Object System.Drawing.Point(230,20)
+$Ins_ports.Font.                 = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 600
@@ -126,14 +132,14 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
 $outputBox.Location = New-Object System.Drawing.Size(12,70) 
-$outputBox.Size = New-Object System.Drawing.Size(550,450) 
+$outputBox.Size = New-Object System.Drawing.Size(480,550) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
 
 $Form.Controls.Add($outputBox)
 $Form.controls.AddRange(@($Panel2,$PictureBox1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
-$Panel1.controls.AddRange(@($p_cocina,$Ins_printers,$outputBox))
+$Panel1.controls.AddRange(@($p_cocina,$Ins_printers,$Ins_ports,$outputBox))
 
 $Chocolatey.Add_Click({ 
     Write-Host "Installing Chocolatey"
@@ -203,6 +209,9 @@ $wshell.Popup("Operacion Completada",0,"Done",0x0)
 })
 $Ins_printers.Add_Click({   
       $OutputBox.Text = Get-Printer | Format-table | Out-String
+})
+$Ins_ports.Add_Click({   
+      $OutputBox.Text = Get-Printerport | Format-List name,Printerhostaddress | Out-String
 })
 
 Function Add-OutputBoxLine {
