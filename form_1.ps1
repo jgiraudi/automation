@@ -63,15 +63,15 @@ $Chocolatey.Font                 = New-Object System.Drawing.Font('Microsoft San
 $p_cocina                        = New-Object system.Windows.Forms.Button
 $p_cocina.text                   = "Instalar Impresoras"
 $p_cocina.width                  = 126
-$p_cocina.height                 = 30
+$p_cocina.height                 = 40
 $p_cocina.location               = New-Object System.Drawing.Point(12,20)
 $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $Ins_printers                    = New-Object system.Windows.Forms.Button
 $Ins_printers.text               = "Impresoras instaladas"
 $Ins_printers.width              = 126
-$Ins_printers.height             = 30
-$Ins_printers.location           = New-Object System.Drawing.Point(90,20)
+$Ins_printers.height             = 40
+$Ins_printers.location           = New-Object System.Drawing.Point(170,20)
 $Ins_printers.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 
@@ -206,8 +206,7 @@ if ($printDriverExists) {
 $wshell.Popup("Operacion Completada",0,"Done",0x0)
 })
 $Ins_printers.Add_Click({   
-        $OutPrinters.Text = Get-Printer
-}
+      $OutPrinters.Text = Get-Printer
 })
 
 Function Add-OutputBoxLine {
