@@ -132,7 +132,7 @@ $GoogleChrome.Font               = New-Object System.Drawing.Font('Microsoft San
 
 $outputBox = New-Object System.Windows.Forms.TextBox 
 $outputBox.Location = New-Object System.Drawing.Size(12,70) 
-$outputBox.Size = New-Object System.Drawing.Size(480,550) 
+$outputBox.Size = New-Object System.Drawing.Size(600,200) 
 $outputBox.MultiLine = $True 
 $outputBox.ScrollBars = "Vertical"
 
