@@ -29,7 +29,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = New-Object System.Drawing.Point(1000,500)
-$Form.text                       = "Form"
+$Form.text                       = "Goodline - Instalador de Utilidades"
 $Form.TopMost                    = $false
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
@@ -50,7 +50,7 @@ $Label1.text                     = "Instalador de Utilidades"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
-$Label1.location                 = New-Object System.Drawing.Point(18,70)
+$Label1.location                 = New-Object System.Drawing.Point(19,80)
 $Label1.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',9)
 
 $Chocolatey                      = New-Object system.Windows.Forms.Button
@@ -66,6 +66,14 @@ $p_cocina.width                  = 126
 $p_cocina.height                 = 30
 $p_cocina.location               = New-Object System.Drawing.Point(12,20)
 $p_cocina.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
+$Ins_printers                    = New-Object system.Windows.Forms.Button
+$Ins_printers.text               = "Impresoras instaladas"
+$Ins_printers.width              = 126
+$Ins_printers.height             = 30
+$Ins_printers.location           = New-Object System.Drawing.Point(90,20)
+$Ins_printers.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 600
@@ -134,7 +142,7 @@ $outputBox.ScrollBars = "Vertical"
 $Form.Controls.Add($outputBox)
 $Form.controls.AddRange(@($Panel2,$PictureBox1,$Label1,$Panel1,$TextBox1,$Label2,$TextBox2,$Label3))
 $Panel2.controls.AddRange(@($Chocolatey,$Teamviewer,$classicshell,$GoogleChrome))
-$Panel1.controls.AddRange(@($p_cocina,$outputBox))
+$Panel1.controls.AddRange(@($p_cocina,$Ins_printers,$outputBox))
 
 $Chocolatey.Add_Click({ Add-OutputBoxLine -Message "Installing Chocolatey" 	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 	choco install chocolatey-core.extension -y 	$wshell.Popup("Operation Completed",0,"Done",0x0) })
 $GoogleChrome.Add_Click({
@@ -196,6 +204,10 @@ if ($printDriverExists) {
     Write-Warning "Driver de la impresora no instalado"
 }
 $wshell.Popup("Operacion Completada",0,"Done",0x0)
+})
+$Ins_printers.Add_Click({ 
+    Add-OutputBoxLine -Message "$(Get-Printer | select-object name,portname)"
+    Add-OutputBoxLine -Message "Done."
 })
 
 Function Add-OutputBoxLine {
