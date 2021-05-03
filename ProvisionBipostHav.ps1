@@ -16,7 +16,7 @@ xcopy.exe C:\Goodline\customdata.json C:\bipost_havanna /Y
 
 xcopy.exe C:\goodline\customschema.json C:\bipost_havanna /Y
 
-$Action = New-ScheduledTaskAction -Execute 'pwsh.exe' -Argument '-NonInteractive -NoLogo -NoProfile -File "C:\Goodline\sync.ps1"'
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-NonInteractive -NoLogo -NoProfile -File "C:\Goodline\sync.ps1"'
 
 $Trigger = New-ScheduledTaskTrigger -Daily -At 10am
 
@@ -24,4 +24,4 @@ $Settings = New-ScheduledTaskSettingsSet
 
 $Task = New-ScheduledTask -Action $Action -Trigger $Trigger -Settings $Settings
 
-Register-ScheduledTask -TaskName 'cust_data' -InputObject $Task 
+Register-ScheduledTask -Force -user SYSTEM -TaskName 'cust_data' -InputObject $Task 
