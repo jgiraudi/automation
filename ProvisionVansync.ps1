@@ -18,7 +18,7 @@ xcopy.exe C:\goodline\customschema.json C:\vansync_antares /Y
 
 
 
-$Action = New-ScheduledTaskAction -Execute 'pwsh.exe' -Argument '-NonInteractive -NoLogo -NoProfile -File "C:\Goodline\sync.ps1"'
+$Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-NonInteractive -NoLogo -NoProfile -File "C:\Goodline\sync.ps1"'
 
 $Trigger = New-ScheduledTaskTrigger -Daily -At 7pm
 
