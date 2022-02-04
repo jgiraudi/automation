@@ -171,7 +171,7 @@ $portName = "p_cocina"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
 if (-not $portExists) {
-  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.10.117"
+  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.88.117"
 }
 $printDriverExists = Get-PrinterDriver -name $printDriverName -ErrorAction SilentlyContinue
 if ($printDriverExists) {
@@ -184,7 +184,7 @@ $portName = "p_barra"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
 if (-not $portExists) {
-  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.10.116"
+  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.88.116"
 }
 $printDriverExists = Get-PrinterDriver -name $printDriverName -ErrorAction SilentlyContinue
 if ($printDriverExists) {
@@ -197,7 +197,7 @@ $portName = "p_control"
 $printDriverName = "Generic / Text Only"
 $portExists = Get-Printerport -Name $portname -ErrorAction SilentlyContinue
 if (-not $portExists) {
-  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.10.115"
+  Add-PrinterPort -name $portName -PrinterHostAddress "192.168.88.115"
 }
 $printDriverExists = Get-PrinterDriver -name $printDriverName -ErrorAction SilentlyContinue
 if ($printDriverExists) {
